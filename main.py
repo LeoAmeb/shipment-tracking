@@ -48,7 +48,8 @@ def main():
             tracking_id = ship24.get_tracking_id(tracker)            
             shipping[headers.index('Ship24 ID')] = tracking_id
 
-            status = SHIP24_AND_OWN_STATUS_DICT.get(tracker['data']['trackings'][0]['shipment']['statusMilestone'], "")
+            status_milestone = ship24.get_status_milestone(tracker)
+            status = SHIP24_AND_OWN_STATUS_DICT.get(status_milestone, "")
             shipping[headers.index('Estatus')] = status
 
             # If the shipping is delivered, we need to update the delivery date
