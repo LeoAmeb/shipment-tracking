@@ -55,7 +55,7 @@ def main():
             # If the shipping is delivered, we need to update the delivery date
             if status_milestone == Ship24MilestoneStatus.DELIVERED.value:
                 delivery_date = ship24.get_delivery_date(tracker)
-                shipping[headers.index('Fecha de entrega')] = delivery_date
+                shipping[headers.index('Fecha de Entrega')] = delivery_date
 
             continue
 
